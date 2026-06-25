@@ -1,0 +1,31 @@
+[project]
+name = "financial-agent-spdd"
+version = "0.1.0"
+description = "A LangGraph-based agent for consumer finance questions grounded in CFPB data"
+authors = [
+    {name = "Peihan Zhang"}
+]
+requires-python = "^3.11"
+dependencies = [
+    "httpx (>=0.28.1,<0.29.0)",
+    "fastapi (>=0.138.0,<0.139.0)",
+    "uvicorn[standard] (>=0.49.0,<0.50.0)"
+]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 88
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "ruff (>=0.15.19,<0.16.0)",
+    "httpx2 (>=2.4.0,<3.0.0)"
+]
